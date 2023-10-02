@@ -16,29 +16,29 @@
 
 <hr>
 
-<form action="/update_actor_record" method="post">
+<form action="/update_actor_record/<%= @the_actor.id %>" method="post">
   <div>
     <label for="name_box">Name</label>
-    <input type="text" id="name_box" name="name" value="<%= @the_actor.name =>">
+    <input type="text" id="name_box" name="name" value="<%= @the_actor.name %>">
   </div>
 
   <div>
     <label for="dob_box">Dob</label>
-    <input type="date" id="dob_box" name="dob" value="<%= @the_actor.dob =>">
+    <input type="date" id="dob_box" name="dob" value="<%= @the_actor.dob %>">
   </div>
 
   <div>
     <label for="bio_box">Bio</label>
-    <textarea row="3" id="bio_box" name="bio" value="<%= @the_actor.bio =>"></textarea>
+    <textarea row="3" id="bio_box" name="bio" value="<%= @the_actor.bio %>"></textarea>
   </div>
 
   <div>
     <label for="image_box">Image</label>
-    <input type="text" id="image_box" name="image" value="<%= @the_actor.image =>">
+    <input type="text" id="image_box" name="image" value="<%= @the_actor.image %>">
   </div>
 
   <button type="submit">
-    Create actor
+    Update actor
   </button>
 </form>
 
