@@ -28,9 +28,28 @@ class DirectorsController < ApplicationController
   end
 
   def update
+    d_id = params.fetch("path_id")
+    matching_records = Director.where({ :id => d_id })
+    this_director = matching_records.at(0)
+
+    this_director.name = params.fetch("name")
+    this_director.dob = params.fetch("dob")
+    this_director.bio = params.fetch("bio")
+    this_director.image = params.fetch("image")
+
+    this_director.save
+
+    redirect_to("/directors/#{this_director.id}")
   end
 
   def destroy
+    d_id = params.fetch("path_id")
+    matching_records = Director.where({ :id => d_id })
+    this_director = matching_records.at(0)
+
+    this_director.destroy
+
+    redirect_to("/directors")
   end
 
   def max_dob
